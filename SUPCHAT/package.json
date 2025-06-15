@@ -1,0 +1,41 @@
+{
+  "name": "supchat",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron": "set NODE_ENV=development && electron electron-main.cjs",
+    "electron:build": "vite build && electron electron-main.cjs",
+    "dist": "vite build && electron-builder"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5",
+    "vue-router": "4.5.1",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12",
+    "vite": "^6.0.5",
+    "vue-router": "4.5.1",
+    "axios": "^1.6.0"
+  },
+  "main": "electron-main.cjs",
+  "build": {
+    "appId": "com.ihavenodomain.supchat",
+    "productName": "SUPCHAT",
+    "files": [
+      "dist/**/*",
+      "electron-main.cjs",
+      "preload.js",
+      "api_address",
+      "node_modules/**/*",
+      "package.json"
+    ]
+  }
+}

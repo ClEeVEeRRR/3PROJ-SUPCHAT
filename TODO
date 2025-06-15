@@ -1,0 +1,66 @@
+ DONE  Les utilisateurs peuvent créer des espaces de travail et inviter des membres via e-mail ou lien d'invitation.
+ FOR TODO  Link with integrated token user and room ids to contact api then redirect
+
+ DONE  Les espaces de travail peuvent être publics (ouverts à tous) ou privés (sur invitation uniquement).
+ FOR TODO  Perms stored in db array
+
+ DONE  Un tableau de bord dédié permet de visualiser et gérer les espaces de travail auxquels l'utilisateur appartient
+ FOR TODO  Superadmin interface
+
+Chaque espace de travail peut avoir plusieurs canaux :
+    DONE  Canaux publics : accessibles à tous les membres de l'espace.
+    FOR TODO  Simple bool in server infos
+    DONE  Canaux privés : accessibles uniquement aux membres invités.
+    FOR TODO  Simple bool in server infos
+    TODO  Les canaux sont organisés dans un menu avec une barre de recherche.
+    FOR TODO  Simple query in es
+
+ DONE  Messagerie en temps réel avec mise à jour automatique des messages.
+ FOR TODO  Websockets with long polling to update messages
+Possibilité d'envoyer :
+    DONE  Messages textuels.
+    DONE  Réactions (emoji).
+    DONE  Fichiers (images, vidéos, PDF, etc.).
+    FOR TODO  File upload with file size limit, stores file id in array
+
+ DONE  Prise en charge des mentions (@utilisateur) et des hashtags (#canal).
+ FOR TODO  Simple clientside adition
+ DONE  Recherche dans les messages par mots-clés.
+ FOR TODO  Simple query in es
+
+Créateurs de canaux/espaces de travail :
+    DONE  Peuvent attribuer des rôles (admin, membre, invité).
+    FOR TODO  Simple db array with role control over admin's own rooms
+    DOONE  Peuvent définir les permissions : publier, modérer, gérer les membres.
+    FOR TODO  Simple db array with role control over admin's own rooms
+
+ TODO  Gestion granulaire des droits : par utilisateur ou par groupe.
+ FOR TODO  Simple db array with roles and permissions
+
+Notifications en temps réel :
+    TODO  Mention d'utilisateur.
+    TODO  Nouveaux messages dans un canal ou un espace.
+Options de personnalisation des notifications :
+    TODO  Par canal.
+    TODO  Notifications push ou e-mails.
+ IMP  DO RESEARCH ON THIS
+
+Intégration avec des outils tiers :
+    TODO  Google Drive, Microsoft Teams, GitHub.
+Automatisation via des bots :
+    TODO  Rappels, sondages, intégrations API tierces.
+ IMP  Feels optional
+
+Recherche unifiée permettant de trouver :
+    DONE  Messages (avec aperçu du contexte).
+    TODO  Fichiers partagés.
+    TODO  Canaux et utilisateurs.
+
+ TODO  Gestion de compte : modification des informations personnelles, ajout/suppression d’OAuth2.
+ FOR TODO  Simple api adition
+Choix des préférences :
+    DONE  Thème clair/sombre.
+    FOR TODO  Simple css adition
+    TODO  Statut personnalisé (en ligne, occupé, hors ligne).
+    FOR TODO  Simple clientside adition, websocket sends array to collec if user in online
+ TODO  Exportation des données personnelles (conforme RGPD).
